@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DramaTicHub - Watch Dubbed & Subtitled Dramas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>DramaTicHub</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="latest.html">Latest</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="drama-details">
+            <h2>Drama Title</h2>
+            <p>Synopsis of the drama...</p>
+            <h3>Available Episodes:</h3>
+            <ul>
+                <li><a href="watch.html?ep=1">Episode 1</a></li>
+                <li><a href="watch.html?ep=2">Episode 2</a></li>
+            </ul>
+        </section>
+
+        <section class="comments">
+            <h3>Comments</h3>
+            <div id="comment-section">
+                <p>No comments yet. Be the first to comment!</p>
+            </div>
+            <textarea id="comment-input" placeholder="Write your comment..."></textarea>
+            <button onclick="postComment()">Post Comment</button>
+        </section>
+    </main>
+
+    <script>
+        function postComment() {
+            let commentInput = document.getElementById("comment-input");
+            let commentSection = document.getElementById("comment-section");
+            if (commentInput.value.trim() !== "") {
+                let newComment = document.createElement("p");
+                newComment.textContent = commentInput.value;
+                commentSection.appendChild(newComment);
+                commentInput.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
